@@ -22,11 +22,16 @@ import org.slf4j.Logger;
 /**
  * SecretPropertiesSource is connected with a properties file in the file system.<br>
  * <br>
+ * <strong>This is no longer necessary</strong> as we can place the secret properties in a copy of application.properties (being not
+ * checked into git) which we
+ * copy into a config directory on the server.<br>
+ * <br>
  * The location of this file must be configured by setting the property 'secret.config.path'. This property is resolved
  * by the MP configuration mechanism.<br>
  * <br>
  * The purpose of redirecting to an external file is to avoid secret properties being checked into version control.
  */
+@Deprecated
 @ApplicationScoped
 public class SecretPropertiesSource implements ConfigSource {
 
